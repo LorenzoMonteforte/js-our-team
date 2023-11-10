@@ -31,4 +31,10 @@ const membri = [
         foto : "barbara-ramos-graphic-designer.jpg"
     }
 ];
-console.log(membri);
+// Stampa in console le informazioni dei membri del team
+for(let i=0; i<membri.length; i++){
+    for(let chiave in membri[i]){
+        console.log(chiave + " : " + membri[i][chiave]);
+    }
+    console.log("");
+}
