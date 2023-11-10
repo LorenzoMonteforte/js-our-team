@@ -3,32 +3,32 @@ const membri = [
     {
         nome : "Wayne Barnett",
         ruolo : "Founder & CEO",
-        foto : "wayne-barnett-founder-ceo.jpg"
+        foto : "img-team/img/wayne-barnett-founder-ceo.jpg"
     },
     {
         nome : "Angela Caroll",
         ruolo : "Chief Editor",
-        foto : "angela-caroll-chief-editor.jpg"
+        foto : "img-team/img/angela-caroll-chief-editor.jpg"
     },
     {
         nome : "Walter Gordon",
         ruolo : "Office Manager",
-        foto : "walter-gordon-office-manager.jpg"
+        foto : "img-team/img/walter-gordon-office-manager.jpg"
     },
     {
         nome : "Angela Lopez",
         ruolo : "Social Media Manager",
-        foto : "angela-lopez-social-media-manager.jpg"
+        foto : "img-team/img/angela-lopez-social-media-manager.jpg"
     },
     {
         nome : "Scott Estrada",
         ruolo : "Developer",
-        foto : "scott-estrada-developer.jpg"
+        foto : "img-team/img/scott-estrada-developer.jpg"
     },
     {
         nome : "Barbara Ramos",
         ruolo : "Graphic Designer",
-        foto : "barbara-ramos-graphic-designer.jpg"
+        foto : "img-team/img/barbara-ramos-graphic-designer.jpg"
     }
 ];
 // Stampa in console le informazioni dei membri del team
@@ -43,9 +43,16 @@ const infoMembriTeam = document.getElementById("infoMembriTeam");
 for(let i=0; i<membri.length; i++){
     const ulMembroTeam = document.createElement("ul");
     for(let chiave in membri[i]){
-        const liMembroTeam = document.createElement("li");
-        liMembroTeam.textContent = chiave + " : " + membri[i][chiave];
-        ulMembroTeam.appendChild(liMembroTeam);
+        // Se nome o ruolo crea una stringa, se foto inserisci la stringa nell'src di un'immagine
+        if(chiave != "foto"){
+            const liMembroTeam = document.createElement("li");
+            liMembroTeam.textContent = chiave + " : " + membri[i][chiave];
+            ulMembroTeam.appendChild(liMembroTeam);
+        }else{
+            const imgMembroTeam = document.createElement("img");
+            imgMembroTeam.src = membri[i][chiave];
+            ulMembroTeam.appendChild(imgMembroTeam);
+        }
     }
     infoMembriTeam.appendChild(ulMembroTeam);
 }
