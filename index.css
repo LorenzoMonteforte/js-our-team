@@ -5,3 +5,11 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+/* ul */
+ul{
+    margin-top: 1rem;
+}
+
+ul:first-of-type{
+    margin-top: 0;
+}

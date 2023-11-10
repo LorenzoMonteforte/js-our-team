@@ -38,3 +38,14 @@ for(let i=0; i<membri.length; i++){
     }
     console.log("");
 }
+// Stampa in pagina le informazioni dei membri del team
+const infoMembriTeam = document.getElementById("infoMembriTeam");
+for(let i=0; i<membri.length; i++){
+    const ulMembroTeam = document.createElement("ul");
+    for(let chiave in membri[i]){
+        const liMembroTeam = document.createElement("li");
+        liMembroTeam.textContent = chiave + " : " + membri[i][chiave];
+        ulMembroTeam.appendChild(liMembroTeam);
+    }
+    infoMembriTeam.appendChild(ulMembroTeam);
+}
