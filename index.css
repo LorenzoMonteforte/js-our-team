@@ -13,3 +13,25 @@ ul{
 ul:first-of-type{
     margin-top: 0;
 }
+/* Header */
+header{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+header > div{
+    height: 100%;
+    width: 50%;
+    background-color: blue;
+    padding: 2rem 0;
+}
+
+header > div > h5{
+    text-align: center;
+}
+
+header > div > p{
+    margin-top: 1rem;
+    text-align: center;
+}
