@@ -1,0 +1,31 @@
+@media only screen and (max-width: 992px){
+    header > div{
+        width: 70%;
+    }
+
+    main > div{
+        width: 90%;
+    }
+
+    .cardContainer{
+        width: calc(100% / 2);
+    }
+
+    .cardContainer:nth-child(1n+3){
+        margin-top: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    header > div{
+        width: 90%;
+    }
+    
+    .cardContainer{
+        width: 100%;
+    }
+
+    .cardContainer:nth-child(1n+2){
+        margin-top: 1.5rem;
+    }
+}
