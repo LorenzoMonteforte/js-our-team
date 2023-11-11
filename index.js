@@ -39,20 +39,29 @@ for(let i=0; i<membri.length; i++){
     console.log("");
 }
 // Stampa in pagina le informazioni dei membri del team
-const infoMembriTeam = document.getElementById("infoMembriTeam");
+const container = document.getElementById("container");
 for(let i=0; i<membri.length; i++){
-    const ulMembroTeam = document.createElement("ul");
-    for(let chiave in membri[i]){
-        // Se nome o ruolo crea una stringa, se foto inserisci la stringa nell'src di un'immagine
-        if(chiave != "foto"){
-            const liMembroTeam = document.createElement("li");
-            liMembroTeam.textContent = chiave + " : " + membri[i][chiave];
-            ulMembroTeam.appendChild(liMembroTeam);
-        }else{
-            const imgMembroTeam = document.createElement("img");
-            imgMembroTeam.src = membri[i][chiave];
-            ulMembroTeam.appendChild(imgMembroTeam);
-        }
-    }
-    infoMembriTeam.appendChild(ulMembroTeam);
+    // cardContainer
+    const cardContainer = document.createElement("div");
+    cardContainer.classList.add("cardContainer");
+    // card
+    const card = document.createElement("div");
+    card.classList.add("card");
+    cardContainer.appendChild(card);
+    // foto
+    const foto = document.createElement("img");
+    foto.src = membri[i].foto;
+    card.appendChild(foto);
+    // nome
+    const nome = document.createElement("div");
+    nome.classList.add("nome");
+    nome.textContent = membri[i].nome;
+    card.appendChild(nome);
+    // ruolo
+    const ruolo = document.createElement("div");
+    ruolo.classList.add("ruolo");
+    ruolo.textContent = membri[i].ruolo;
+    card.appendChild(ruolo);
+    // Appende il tutto a cardContainer
+    container.appendChild(cardContainer);
 }
